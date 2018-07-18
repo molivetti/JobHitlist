@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>160</y>
+      <w>210</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>Jobs
+--
+-id: pk
+-title: string
+-company: string
+-city: string
+-state: string(2)
+-description: text
+-url: string
+-salaryMin: int
+-salaryMax: int
+-contactName: string
+-contactEmail: string
+--
+/+new()/
+/+update()/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>300</y>
+      <w>140</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Events
+--
+-id: pk
+-notes: text</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>120</y>
+      <w>140</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Statuses
+--
+-id: pk
+-name: string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>570</x>
+      <y>560</y>
+      <w>180</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Applications
+--
+-id: pk
+-coverLetter: text
+-channel: string
+-notes: text
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>560</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Resumes
+--
+-id: pk
+-path: string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>950</x>
+      <y>190</y>
+      <w>50</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>m2=1
+m1=1..n</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>340</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=1
+m1=1..n</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>410</y>
+      <w>50</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>m2=1
+m1=0..1</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>600</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>m2=1
+m1=0..n</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>850</x>
+      <y>590</y>
+      <w>140</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Assessments
+--
+-id: pk
+-content: text
+-path: string
+-response: text
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>740</x>
+      <y>620</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m2=0..n
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+</diagram>
