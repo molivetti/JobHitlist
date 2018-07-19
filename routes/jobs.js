@@ -2,6 +2,16 @@ var models  = require('../models');
 var express = require('express');
 var router  = express.Router();
 
+router.get('/:jobId', function(req, res) {
+  models.Job.findById(req.params.jobId)
+    .then(function(job) {
+      res.render('job', {
+        title: 'Job Details',
+        job: job
+      });
+    });
+});
+
 router.post('/create', function(req, res) {
   models.Job.create({ 
     title: 			  req.body.title,

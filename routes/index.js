@@ -6,9 +6,9 @@ router.get('/', function(req, res) {
   models.Job.findAll()
   	.then(function(jobs) {
 	  res.render('index', {
-      title: 'Job Hitlist',
-      jobs: jobs
-    });
+      	title: 'Job Hitlist',
+      	jobs: jobs
+      });
   });
 });
 

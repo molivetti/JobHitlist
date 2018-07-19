@@ -1,63 +1,80 @@
 extends layout
 
 block content
-  h1= title
+  div(class="container")
+  
+    div(class="text-center mt-5")
+      h1(class="display-3")= title
+    blockquote(class="blockquote text-right")
+      p(class="mb-0")
+        | “I had a job interview at an insurance company once, and the lady said ‘Where do you see yourself in five years?’ I said, ‘Celebrating the fifth year anniversary of you asking me this question!’”
+      footer(class="blockquote-footer")
+        | Mitch Hedberg
+  
+    div(class="row")
+      div(class="col-md-5")
 
-  div(class="col-md-4")
-    h2 Create job
+        h4 Create Job
 
-    form(action="/jobs/create", method="post", class="well")
-      div(class="form-group")
+        form(action="/jobs/create", method="post", class="well")
+          
+          div(class="form-group col-md-12")
+            label(for="title")
+              | Title
+            input(type="text", name="title", class="form-control")
 
-        label(for="title")
-          | Title
-        input(type="text", name="title", class="form-control")
+          div(class="form-group col-md-12")
+            label(for="company")
+              | Company
+            input(type="text", name="company", class="form-control")
 
-        label(for="company")
-          | Company
-        input(type="text", name="company", class="form-control")
+          div(class="form-row col-md-12")
+            div(class="form-group col-md-6")  
+              label(for="city")
+                | City
+              input(type="text", name="city", class="form-control")
+            div(class="form-group col-md-2")
+              label(for="state")
+                | State
+              input(type="text", name="state", class="form-control")
 
-        label(for="city")
-          | City
-        input(type="text", name="city", class="form-control")
+          div(class="form-group col-md-12")
+            label(for="description")
+              | Description
+            textarea(name="description", class="form-control")
 
-        label(for="state")
-          | State
-        input(type="text", name="state", class="form-control")
+          div(class="form-group col-md-12")
+            label(for="url")
+              | URL
+            input(type="text", name="url", class="form-control")
+        
+          div(class="form-group col-md-12")
+            label(for="") 
+              | Salary Range
+            div(class="input-group")
+              input(type="text", name="salaryMin", class="form-control", placeholder="Minimum")
+              input(type="text", name="salaryMax", class="form-control", placeholder="Maximum")
 
-        label(for="description")
-          | Description
-        input(type="text", name="description", class="form-control")
+          div(class="form-row col-md-12")
+            div(class="form-group col-md-6") 
+              label(for="contactName")
+                | Contact Name
+              input(type="text", name="contactName", class="form-control")
+            div(class="form-group col-md-6")
+              label(for="contactEmail")
+                | Contact Email
+              input(type="text", name="contactEmail", class="form-control")
 
-        label(for="url")
-          | URL
-        input(type="text", name="url", class="form-control")
+          input(type="submit" class="btn btn-primary")
 
-        label(for="salaryMin")
-          | Salary Minimum
-        input(type="text", name="salaryMin", class="form-control")
+      div(class="col-md-7")
 
-        label(for="salaryMax")
-          | Salary Maximum
-        input(type="text", name="salaryMax", class="form-control")
+        h4 Jobs
 
-        label(for="contactName")
-          | Contact Name
-        input(type="text", name="contactName", class="form-control")
-
-        label(for="contactEmail")
-          | Contact Email
-        input(type="text", name="contactEmail", class="form-control")
-
-      input(type="submit" class="btn btn-default")
-
-  div(class="col-md-6")
-    h2 Jobs
-
-    ul
-      each job in jobs
-        li
-          strong
-            = job.title + " at " + job.company
-          | &nbsp;
-          a(href="/jobs/" + job.id + "/destroy", class="btn btn-xs btn-warning") delete
+        ul
+          each job in jobs
+            li
+              strong
+                = job.title + " at " + job.company
+              | &nbsp;
+              a(href="/jobs/" + job.id + "/destroy", class="btn btn-xs btn-warning") delete
